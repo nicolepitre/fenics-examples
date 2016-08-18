@@ -29,3 +29,15 @@ The following tips and notes might be useful when learning FEniCS and Gmsh:
   - gmsh -2 cape.geo -o cape.msh
 - List of Gmsh command-line options: *Section 3.3* of http://gmsh.info/doc/texinfo/gmsh.html#Command_002dline-options
 - Gmsh Periodic Line/Surface commands: http://www.manpagez.com/info/gmsh/gmsh-2.7.1/gmsh_47.php
+
+Once you are comfortable with FEniCS and Gmsh, you can create your own demos by following these steps:
+
+## Steps to create a FEniCS Demo for a particular geometry
+1. Create a geometry file in the Gmsh script language.
+2. Use Gmsh to generate a finite element mesh from the geometry file.
+3. Convert the mesh into XML format using the dolfin-convert script. The script also produces an XML file called filename_facet_regions.xml if you have marked any physical lines/surfaces in Gmsh.
+4. Write a Python demo script using the FEniCS DOLFIN module.
+5. Add the XML mesh file into the Python demo script.
+6. Open FEniCS in a virtual environment such as Docker and run the demo.
+7. View the solution in VisIt.
+
