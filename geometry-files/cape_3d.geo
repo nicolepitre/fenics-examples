@@ -1,6 +1,4 @@
-   /* 
-    3D Cape Geometry File
-   */
+   /* 3D Cape Geometry File */
 
     gridsize = 0.05; // prescribed mesh element size
     meshThickness = 0.1;
