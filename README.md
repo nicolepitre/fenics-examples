@@ -3,7 +3,7 @@ A collection of FEniCS examples that show simple ways to use FEniCS to solve PDE
 
 This repository contains examples of Python code for FEniCS. It also contains geometry files written in the Gmsh scripting language. All files with the .geo extension can be displayed in Gmsh. The corresponding mesh files (.msh extension) are contained in the folder called meshes. The XML versions of the meshes are contained in the folder called xml-meshes. Any file with the .py extension should be run inside of FEniCS, including the dolfin-convert script.
 
-The following tips and notes might be useful when learning FEniCS and Gmsh:
+The following tips and notes might be useful when learning FEniCS and Gmsh.
 
 ## FEniCS Notes
 - List of FEniCS demos: http://fenicsproject.org/documentation/dolfin/1.6.0/python/demo/index.html
@@ -30,7 +30,7 @@ The following tips and notes might be useful when learning FEniCS and Gmsh:
 - List of Gmsh command-line options: *Section 3.3* of http://gmsh.info/doc/texinfo/gmsh.html#Command_002dline-options
 - Gmsh Periodic Line/Surface commands: http://www.manpagez.com/info/gmsh/gmsh-2.7.1/gmsh_47.php
 
-Once you are comfortable with FEniCS and Gmsh, you can create your own demos by following these steps:
+Once you are comfortable with FEniCS and Gmsh, you can create your own demos by following the steps below.
 
 ## Steps to create a FEniCS Demo for a particular geometry
 1. Create a geometry file in the Gmsh script language.
