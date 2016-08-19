@@ -40,7 +40,6 @@ from dolfin import *
 
 mesh = Mesh("cube_periodic.xml")
 subdomains = MeshFunction("size_t", mesh, "cube_periodic_facet_region.xml")
-
 V = FunctionSpace(mesh, "Lagrange", 1)
 
 # Define Dirichlet boundary (x = 0 or x = 1)
