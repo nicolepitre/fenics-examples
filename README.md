@@ -36,7 +36,7 @@ Once you are comfortable with FEniCS and Gmsh, you can create your own demos by 
 ## Steps to create a FEniCS Demo for a particular geometry
 1. Create a geometry file in the Gmsh script language.
 2. Use Gmsh to generate a finite element mesh from the geometry file.
-3. Convert the mesh into XML format using the dolfin-convert script. The script also produces an XML file called filename_facet_regions.xml if you have labelled any physical lines/surfaces in Gmsh. The syntax for running dolfin-convert inside FEniCS is **dolfin-convert filename.msh filename.xml**
+3. Convert the mesh into XML format using the dolfin-convert script. The script also produces an XML file called filename_facet_regions.xml if you have labelled any physical lines/surfaces in the geometry file. The syntax for running dolfin-convert inside FEniCS is **dolfin-convert filename.msh filename.xml**.
 4. Write a Python demo script using the FEniCS DOLFIN module.
 5. Add the XML mesh file into the Python demo script.
 6. Open FEniCS in a virtual environment such as Docker and run the demo.
