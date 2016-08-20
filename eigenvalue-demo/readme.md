@@ -1,1 +1,1 @@
-This folder contains various eigenvalue solver demos for FEniCS. The "largest" demos simply calculate the largest eigenvalue in each problem. The eigenvalue-solver demo calculates all of the eigenvalues.
+This folder contains various eigenvalue solver demos for FEniCS. The "largest" demos simply calculate the largest eigenvalue in each problem. The eigenvalue-solver demo calculates all of the eigenvalues, as discussed in this FEniCS Q&A post: https://fenicsproject.org/qa/7956/symmetry-and-dirichlet-eigenvalue-problem.
