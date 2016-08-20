@@ -56,7 +56,7 @@ mesh = Mesh("cape.xml")
 subdomains = MeshFunction("size_t", mesh, "cape_facet_region.xml")
 V = FunctionSpace(mesh, "CG", 1)
 
-# boundary conditions
+# Impose Dirichlet boundary conditions
 u0 = Constant(0.0)
 bc0 = DirichletBC(V, u0, subdomains, 1)
 bc1 = DirichletBC(V, u0, subdomains, 2)

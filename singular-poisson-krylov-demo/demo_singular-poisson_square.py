@@ -56,6 +56,15 @@ mesh = Mesh("square.xml")
 subdomains = MeshFunction("size_t", mesh, "square_facet_region.xml")
 V = FunctionSpace(mesh, "CG", 1)
 
+# Impose Dirichlet boundary conditions
+u0 = Constant(0.0)
+bc0 = DirichletBC(V, u0, subdomains, 1)
+bc1 = DirichletBC(V, u0, subdomains, 2)
+bc2 = DirichletBC(V, u0, subdomains, 3)
+bc3 = DirichletBC(V, u0, subdomains, 4)
+bcs = [bc0, bc1, bc2, bc3]
+
+
 # Define variational problem
 u = TrialFunction(V)
 v = TestFunction(V)
@@ -65,8 +74,7 @@ a = inner(grad(u), grad(v))*dx
 L = f*v*dx #+ g*v*ds
 
 # Assemble system
-A = assemble(a)
-b = assemble(L)
+A, b = assemble_system(a, L, bcs)
 
 # Solution Function
 u = Function(V)
