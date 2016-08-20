@@ -13,20 +13,21 @@ The following tips and notes might be useful when learning FEniCS and Gmsh.
 - The dolfin-convert script can be found here: https://people.sc.fsu.edu/~jburkardt/py_src/dolfin-convert/dolfin-convert.html
 - It only takes two commands to get a Jupyter notebook up and running in Docker with a FEniCS environment installed
   - The commands are:
-    - fenicsproject notebook myproject
-    - fenicsproject start myproject 
-    - To close the notebook, type the following command: docker stop myproject
+    - **fenicsproject notebook myproject**
+    - **fenicsproject start myproject** 
+    - To close the notebook, type the following command: **docker stop myproject**
 - Periodic boundary condition class in FEniCS: 
     - https://bitbucket.org/fenics-project/dolfin/pull-requests/4/adding-test-for/diff 
     - https://fenicsproject.org/documentation/dolfin/1.3.0/python/demo/documented/periodic/python/documentation.html
     - https://fenicsproject.org/qa/262/possible-specify-more-than-one-periodic-boundary-condition
 
 ## Gmsh Notes
-- Tutorial on how to use Gmsh: https://openfoamwiki.net/index.php/2D_Mesh_Tutorial_using_GMSH
-- Command for Mac OS X Terminal to set up the gmsh command line: 
-  - ln -s //Applications/Gmsh.app/Contents/MacOS/gmsh /usr/local/bin/gmsh
+- The tutorial on the Gmsh website is useful: http://gmsh.info/doc/texinfo/gmsh.html
+- Another tutorial on how to use Gmsh: https://openfoamwiki.net/index.php/2D_Mesh_Tutorial_using_GMSH
+- Use the following command in the Mac OS X Terminal to allow gmsh access from the command line: 
+  - **ln -s //Applications/Gmsh.app/Contents/MacOS/gmsh /usr/local/bin/gmsh**
 - Command to make cape.geo file into a 2D mesh file:
-  - gmsh -2 cape.geo -o cape.msh
+  - **gmsh -2 cape.geo -o cape.msh**
 - List of Gmsh command-line options: *Section 3.3* of http://gmsh.info/doc/texinfo/gmsh.html#Command_002dline-options
 - Gmsh Periodic Line/Surface commands: http://www.manpagez.com/info/gmsh/gmsh-2.7.1/gmsh_47.php
 
@@ -35,7 +36,7 @@ Once you are comfortable with FEniCS and Gmsh, you can create your own demos by 
 ## Steps to create a FEniCS Demo for a particular geometry
 1. Create a geometry file in the Gmsh script language.
 2. Use Gmsh to generate a finite element mesh from the geometry file.
-3. Convert the mesh into XML format using the dolfin-convert script. The script also produces an XML file called filename_facet_regions.xml if you have marked any physical lines/surfaces in Gmsh.
+3. Convert the mesh into XML format using the dolfin-convert script. The script also produces an XML file called filename_facet_regions.xml if you have labelled any physical lines/surfaces in Gmsh. The syntax for running dolfin-convert inside FEniCS is **dolfin-convert filename.msh filename.xml**
 4. Write a Python demo script using the FEniCS DOLFIN module.
 5. Add the XML mesh file into the Python demo script.
 6. Open FEniCS in a virtual environment such as Docker and run the demo.
